@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+
+    <style>
+        body{
+            background-color: #8a160f;
+        }
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #yes{
+            height: 40px;
+            width: 60px;
+            background-color: #8a160f;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px; 
+        }
+        #no{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: #8a160f;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Happy Valentine's Day!</h1>
+
+        <img src="im_namoro/ursinho-fofo-apaixonado (1).gif"  alt="">
+
+        <h2>Will you date me?</h2>
+        
+        <button id="yes" onclick="parabens()"> Yes! </button>
+        <button onmouseover="fuja()" id="no"> No! </button>
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaono = document.getElementById("no")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaono.offsetWidth
+            var maxY = alturaJanela - botaono.offsetHeight
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaono.style.left = aleatorioX + "px";
+            botaono.style.top = aleatorioY + "px";
+        }
+
+        function parabens(){
+            alert("Congratulations! Good Choice! ;)")
+        }
+    </script>
+</body>
+</html>
